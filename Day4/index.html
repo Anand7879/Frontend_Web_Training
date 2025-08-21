@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            height: 100vh;
+            width: 100vw;
+            display: grid;
+           grid-template-columns: 1fr 1fr;
+           gap: 10px;
+
+        }
+        .container div{
+            border: 1px solid black;
+        }
+        #box1{
+            height: 200px;
+            width: 300px;
+            background: linear-gradient(red,green);
+        }
+         #box2{
+            height: 200px;
+            width: 300px;
+            background: linear-gradient(to right, blue,red);
+        }
+        #box3{
+            height: 200px;
+            width: 300px;
+            background: linear-gradient(30deg,rgb(14, 164, 250),rgb(220, 236, 7));
+        }
+        #box4{
+            height: 200px;
+            width: 300px;
+            background: repeating-linear-gradient(-65deg,red 0px,red 10px,rgb(16, 16, 16) 10px,rgb(22, 21, 21) 20px);
+        }
+        #box5{
+            height: 200px;
+            width: 300px;
+            background: repeating-linear-gradient(60deg,blue 0px,blue 10px,orange 0px,orange 20px);
+        }
+        #box6{
+            height: 200px;
+            width: 300px;
+            background: radial-gradient(red,rgb(84, 9, 245));
+        }
+        #box7{
+            height: 200px;
+            width: 300px;
+            background: radial-gradient(ellipse at center,red,rgb(84, 9, 245),gold);
+        }
+        #box8{
+            height: 200px;
+            width: 300px;
+            background: radial-gradient(circle at top left,#0f7df3,rgb(245, 9, 202));
+        }
+        #box9{
+            height: 200px;
+            width: 300px;
+            background: repeating-radial-gradient(circle,#0f7df3,rgb(245, 9, 202));
+        }
+        #box10{
+            height: 200px;
+            width: 300px;
+            background: repeating-radial-gradient(circle,#0f7df3 0px,#0f7df3 10px,rgb(245, 9, 202) 0px,rgb(245, 9, 202) 20px);
+        }
+        #box11{
+            height: 200px;
+            width: 300px;
+            background: conic-gradient(red,blue,yellow);
+        }
+        #box12{
+            height: 200px;
+            width: 300px;
+            background: conic-gradient(from 90deg, red,orange,yellow);
+        }
+         #box13{
+            height: 200px;
+            width: 300px;
+            background: repeating-conic-gradient(red 0deg 20deg,yellow 20deg 40deg)
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="box1"></div>
+        <div id="box2"></div>
+        <div id="box3"></div>
+        <div id="box4"></div>
+        <div id="box5"></div>
+        <div id="box6"></div>
+         <div id="box7"></div>
+          <div id="box8"></div>
+          <div id="box9"></div>
+          <div id="box10"></div>
+          <div id="box11"></div>
+          <div id="box12"></div>
+          <div id="box13"></div>
+
+
+
+
+    </div>
+</body>
+</html>
