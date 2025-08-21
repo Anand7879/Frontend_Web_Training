@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Road Animation - Continuous Moving Lines</title>
+    <style>
+
+        body {
+            background-color: aquamarine;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+
+        #road {
+            height: 150px;
+            background-color: black;
+            position: absolute;
+            width: 100%;
+            bottom: 0%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .line {
+            width: 120px;
+            height: 15px;
+            background-color: white;
+            border-radius: 2px;
+            animation-name: moveLine;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        /* Keyframe animation for moving lines from right to left */
+        @keyframes moveLine {
+            0% {
+                transform: translateX(100vw);
+            }
+            100% {
+                transform: translateX(-200px);
+            }
+        }
+
+        /* Stagger the animations for continuous effect */
+        .line:nth-child(1) { 
+            animation-delay: 0s; 
+        }
+        .line:nth-child(2) { 
+            animation-delay: 0.4s; 
+        }
+        .line:nth-child(3) { 
+            animation-delay: 0.8s; 
+        }
+        .line:nth-child(4) { 
+            animation-delay: 1.2s; 
+        }
+        .line:nth-child(5) { 
+            animation-delay: 1.6s; 
+        }
+
+        /* Car styling */
+        #car {
+            width: 150px;
+            height: 100px;
+            background-color: rgb(0, 140, 255);
+            border-radius: 20px;
+            position: absolute;
+            bottom: 30px;
+            left: 70px;
+            display: flex;
+            justify-content: space-around;
+            align-items: end;
+            z-index: 10;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Car window styling */
+        #car::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 120px;
+            height: 40px;
+            background-color: rgba(135, 206, 250, 0.8);
+            border-radius: 10px;
+        }
+
+        /* Wheel styling and animation */
+        .wheel {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, rgb(17, 1, 1), rgb(250, 247, 252));
+            border-radius: 50px;
+            position: absolute;
+            bottom: -18px;
+            border: 3px solid #333;
+            animation-name: wheelrotation;
+            animation-duration: 0.5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        /* Wheel rotation animation */
+        @keyframes wheelrotation {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Wheel positioning */
+        .wheel.left {
+            left: 20px;
+        }
+        .wheel.right {
+            right: 20px;
+        }
+
+        Add some clouds in the sky for atmosphere */
+        .cloud {
+            position: absolute;
+            background-color: white;
+            border-radius: 50px;
+            opacity: 0.8;
+            animation: moveCloud 10s linear infinite;
+        }
+
+        .cloud1 {
+            width: 80px;
+            height: 40px;
+            top: 20%;
+            left: -100px;
+        }
+
+        .cloud2 {
+            width: 100px;
+            height: 50px;
+            top: 10%;
+            left: -150px;
+            animation-delay: -5s;
+        }
+
+        .cloud3 {
+            width: 60px;
+            height: 30px;
+            top: 25%;
+            left: -80px;
+            animation-delay: -8s;
+        }
+
+        /* @keyframes moveCloud {
+            0% {
+                transform: translateX(-100px);
+            }
+            100% {
+                transform: translateX(calc(100vw + 100px));
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sky with clouds -->
+    <!-- <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div> -->
+
+    <!-- Road with moving lines -->
+    <div id="road">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+
+    <!-- Car with rotating wheels -->
+    <div id="car">
+        <div class="wheel left"></div>
+        <div class="wheel right"></div>
+    </div>
+</body>
+</html>
