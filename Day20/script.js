@@ -15,6 +15,8 @@
 // console.log(first);
 // console.log(second);
 
+// const { createElement } = require("react");
+
 // It is wrong
 // let sum = 0;
 // let first, second, third;
@@ -38,13 +40,39 @@
 // console.log(third);
 
 // Object Destructring
-let obj = {
-    id:41,
-    name:"Ankit",
-    lastName:"Pal"
-}
-let {id, name} = obj; //Here we have to write id which we want to access from object
-console.log(id);
-console.log(name);
+// let obj = {
+//     id:41,
+//     name:"Ankit",
+//     lastName:"Pal"
+// }
+// let {id, name} = obj; //Here we have to write id which we want to access from object
+// console.log(id);
+// console.log(name);
 
-let arr = [1,2,4,5,3,5,8];
+// let arr = [1,2,4,5,3,5,8];
+
+
+
+let ul = document.querySelector("ul")
+fetch("https://jsonplaceholder.typicode.com/todos").then((data)=>{
+    // console.log(data);
+    return data.json()
+    
+}).then((res)=>{
+    // console.log(res);
+    show(res)
+    
+})
+
+function show(res){
+    for(let i of res){
+        let li = document.createElement("li")
+        let h3 = document.createElement("h3")
+
+        li.innerText = i.id
+        h3.innerText = i.title
+        ul.append(li)
+        ul.append(h3)
+
+    }
+}
