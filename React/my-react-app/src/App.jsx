@@ -25,17 +25,116 @@
 // export default App
 
 
-import React from 'react'
-let count = 0
-const App = () => {
-    function fun1(){
-      count+=1
+// import React, {useState} from 'react'
 
-    }
+// const App = () => {
+//   let [state,SetState] = useState(0)
+//     function fun1(){
+      
+// SetState(state+1)
+//     }
+//   return (
+//     <div>
+//         <h2>{state}</h2>
+//         <button onClick={fun1}>click</button>
+//     </div>
+//   )
+// }
+
+// export default App
+
+// import React, {useState} from 'react'
+
+// const App = () => {
+//   let [state,SetState] = useState("red")
+
+//     function fun1(){
+//       if(state=='red'){
+//         SetState("green")
+//       }else{
+//         SetState("red")
+//       }
+//     }
+//   return (
+//     <div style={{backgroundColor:state,width:"100vw",height:"100vh",display:'flex',justifyContent:'center',alignItems:'center'}}>
+//         <h2></h2>
+//         <button onClick={fun1}>click</button>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+// import React, {useState} from 'react'
+
+// const App = () => {
+//   let [state,SetState] = useState(0)
+
+//     function fun1(){
+// SetState(state+1)
+      
+//     }
+//      function fun2(){
+// SetState(state-1)
+      
+//     }
+//      function fun3(){
+// SetState(0)
+      
+//     }
+//   return (
+//     <div>
+//          <h2>{state}</h2>
+//         <button onClick={fun1}>++</button>
+//         <button onClick={fun2}>--</button>
+//         <button onClick={fun3}>Reset</button>
+
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+
+// import React, {useState} from 'react'
+
+// const App = () => {
+//   let [state,SetState] = useState(0)
+
+//   return (
+//     <div>
+//          <h2>{state}</h2>
+//         <button onClick={()=>SetState(state+1)}>++</button>
+//         <button onClick={()=>SetState(state>0?state-1:0)}>--</button>
+//         <button onClick={()=>SetState(0)}>Reset</button>
+
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+import React, {useState} from 'react'
+
+const App = () => {
+  let [state,SetState] = useState(new Date().toLocaleTimeString())
+
+  setInterval(() => {
+     SetState(new Date().toLocaleTimeString())
+  });
+
   return (
     <div>
-        <h2>{count}</h2>
-        <button onClick={fun1}>click</button>
+         <h2>{state}</h2>
+         <button onClick={()=>SetState(state+1)}>Stop</button>
+         <button onClick={()=>SetState(state+1)}>Start</button>
+
     </div>
   )
 }
