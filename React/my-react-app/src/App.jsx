@@ -201,17 +201,18 @@
 // export default App
 
 
-import React from 'react'
+// import React from 'react'
 
-const App = () => {
-  fetch("https://api.unsplash.com/users/samuelzeller/photos")
-  .then((response)=>{
-    return response.json()
-  }).then((data)=>{
-    console.log(data);
-  })
+// const App = () => {
+//   fetch("https://api.unsplash.com/users/samuelzeller/photos")
+//   .then((response)=>{
+//     return response.json()
+//   }).then((data)=>{
+//     console.log(data);
+//   })
 
 
-}
+// }
 
-export default App
+// export default App
+
