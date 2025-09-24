@@ -120,23 +120,98 @@
 
 
 
-import React, {useState} from 'react'
+// import React, {useState} from 'react'
+
+// const App = () => {
+//   let [state,SetState] = useState(new Date().toLocaleTimeString())
+
+//   setInterval(() => {
+//      SetState(new Date().toLocaleTimeString())
+//   });
+
+//   return (
+//     <div>
+//          <h2>{state}</h2>
+//          <button onClick={()=>SetState(state+1)}>Stop</button>
+//          <button onClick={()=>SetState(state+1)}>Start</button>
+
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+//Date:-24/09/2025
+// import React, {useState,useEffect} from 'react'
+
+// const App = () => {
+//   let [count,setCount] = useState(0)
+//   let [city,setCity] = useState('Indore')
+
+//   useEffect(() => {
+//     console.log("Hello");
+
+//   },[count])
+  
+
+//   return (
+//     <div>
+//         <h2>{count}</h2>
+//         <button onClick={()=>setCount(count+1)}>click</button>
+//         <h3>{city}</h3>
+//         <button onClick={()=>setCity('Katni')}>Change</button>
+//     </div>
+//   )
+// }
+// export default App
+
+// import React, {useState,useEffect, use} from 'react'
+// import './App.css'
+// const App = () => {
+//   let [Apidata,setApiData] = useState([])
+//   useEffect(() => {
+//     fetch('https://jsonplaceholder.typicode.com/todos')
+//     .then((response)=>{
+//       return response.json()
+//     }).then((data)=>{
+//       console.log(data);
+//       setApiData(data)
+      
+//     })
+
+//   },[])
+//   return(
+//     <div>
+//       {
+//         Apidata.map((a)=>{
+//           return(
+//             <>
+//             <p id='one'>{a.id}</p>
+//             <h2>{a.title}</h2>
+//             </>
+//           )
+//         })
+//       }
+//     </div>
+//   )
+  
+// }
+// export default App
+
+
+import React from 'react'
 
 const App = () => {
-  let [state,SetState] = useState(new Date().toLocaleTimeString())
+  fetch("https://api.unsplash.com/users/samuelzeller/photos")
+  .then((response)=>{
+    return response.json()
+  }).then((data)=>{
+    console.log(data);
+  })
 
-  setInterval(() => {
-     SetState(new Date().toLocaleTimeString())
-  });
 
-  return (
-    <div>
-         <h2>{state}</h2>
-         <button onClick={()=>SetState(state+1)}>Stop</button>
-         <button onClick={()=>SetState(state+1)}>Start</button>
-
-    </div>
-  )
 }
 
 export default App
