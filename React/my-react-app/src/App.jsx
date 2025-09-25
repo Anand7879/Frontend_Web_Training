@@ -1,7 +1,6 @@
-import './App.css'
 // const App=()=>{
-//     return(
-//     // <><h1>Hello Purvesh Tiwari</h1></>
+    //     return(
+        //     // <><h1>Hello Purvesh Tiwari</h1></>
 //      <form>
 //         <h1>Registration Form</h1>
 //         <fieldset>
@@ -35,12 +34,12 @@ import './App.css'
 // SetState(state+1)
 //     }
 //   return (
-//     <div>
-//         <h2>{state}</h2>
-//         <button onClick={fun1}>click</button>
-//     </div>
-//   )
-// }
+    //     <div>
+    //         <h2>{state}</h2>
+    //         <button onClick={fun1}>click</button>
+    //     </div>
+    //   )
+    // }
 
 // export default App
 
@@ -104,7 +103,7 @@ import './App.css'
 // import React, {useState} from 'react'
 
 // const App = () => {
-//   let [state,SetState] = useState(0)
+    //   let [state,SetState] = useState(0)
 
 //   return (
 //     <div>
@@ -124,12 +123,12 @@ import './App.css'
 // import React, {useState} from 'react'
 
 // const App = () => {
-//   let [state,SetState] = useState(new Date().toLocaleTimeString())
-
-//   setInterval(() => {
-//      SetState(new Date().toLocaleTimeString())
-//   });
-
+    //   let [state,SetState] = useState(new Date().toLocaleTimeString())
+    
+    //   setInterval(() => {
+        //      SetState(new Date().toLocaleTimeString())
+        //   });
+        
 //   return (
 //     <div>
 //          <h2>{state}</h2>
@@ -196,7 +195,7 @@ import './App.css'
 //       }
 //     </div>
 //   )
-  
+
 // }
 // export default App
 
@@ -205,6 +204,7 @@ import './App.css'
 //Date:-25/09/2025
 
 import React, {useEffect,useState} from 'react'
+import './App.css'
 
 const App = () => {
 let [apiData,setApiData] = useState([])
@@ -225,6 +225,14 @@ function deleteRecipe(recipeId){
     setApiData(newArr)
 }
 
+function save(index){
+     let newArr =   apiData.find((recipe, index) => {
+        
+    })
+    localStorage.setItem("recipe",JSON.stringify(newArr))
+    
+}
+
   return (
     <div>
         {
@@ -234,6 +242,7 @@ function deleteRecipe(recipeId){
                     <img src={a.image}/>
                     <p>{a.name}</p>
                     <button onClick={() => deleteRecipe(index)}>delete</button>
+                    <button onClick={() => save(index)}>save</button>
                 </div>
                 )
             })
