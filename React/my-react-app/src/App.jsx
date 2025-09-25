@@ -1,3 +1,4 @@
+import './App.css'
 // const App=()=>{
 //     return(
 //     // <><h1>Hello Purvesh Tiwari</h1></>
@@ -48,12 +49,12 @@
 // const App = () => {
 //   let [state,SetState] = useState("red")
 
-//     function fun1(){
-//       if(state=='red'){
-//         SetState("green")
-//       }else{
-//         SetState("red")
-//       }
+    // function fun1(){
+    //   if(state=='red'){
+    //     SetState("green")
+    //   }else{
+    //     SetState("red")
+    //   }
 //     }
 //   return (
 //     <div style={{backgroundColor:state,width:"100vw",height:"100vh",display:'flex',justifyContent:'center',alignItems:'center'}}>
@@ -168,7 +169,6 @@
 // export default App
 
 // import React, {useState,useEffect, use} from 'react'
-// import './App.css'
 // const App = () => {
 //   let [Apidata,setApiData] = useState([])
 //   useEffect(() => {
@@ -201,21 +201,45 @@
 // export default App
 
 
-// import React from 'react'
-
-// const App = () => {
-//   fetch("https://api.unsplash.com/users/samuelzeller/photos")
-//   .then((response)=>{
-//     return response.json()
-//   }).then((data)=>{
-//     console.log(data);
-//   })
-
-
-// }
-
-// export default App
 
 //Date:-25/09/2025
 
+import React, {useEffect,useState} from 'react'
 
+const App = () => {
+let [apiData,setApiData] = useState([])
+
+useEffect(() => {
+fetch("https://dummyjson.com/recipes").then((res)=>{
+    return res.json()
+}).then((data)=>{
+    console.log(data.recipes);
+    setApiData(data.recipes)
+})
+}, []) 
+
+function deleteRecipe(recipeId){
+  let newArr =   apiData.filter((recipe, index) => {
+        return index != recipeId
+    })
+    setApiData(newArr)
+}
+
+  return (
+    <div>
+        {
+            apiData.map((a,index)=>{
+                return(
+                <div id='one'>
+                    <img src={a.image}/>
+                    <p>{a.name}</p>
+                    <button onClick={() => deleteRecipe(index)}>delete</button>
+                </div>
+                )
+            })
+        }
+    </div>
+  )
+}
+
+export default App
