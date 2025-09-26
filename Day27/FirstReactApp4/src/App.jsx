@@ -89,6 +89,7 @@ function Show(){
         <button onClick={()=>sort('l')}>Lunch</button>
         <button onClick={()=>sort('d')}>Dinner</button>
         <button onClick={()=>Show()}>ShowAll</button>
+        
         </div>
 
         {
