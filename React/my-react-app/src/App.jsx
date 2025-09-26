@@ -226,10 +226,11 @@ function deleteRecipe(recipeId){
 }
 
 function save(index){
-     let newArr =   apiData.find((recipe, index) => {
+     let newArr =   apiData.find((a, b) => {
+        return b==index;
         
     })
-    localStorage.setItem("recipe",JSON.stringify(newArr))
+    localStorage.setItem("img",JSON.stringify(newArr))
     
 }
 
