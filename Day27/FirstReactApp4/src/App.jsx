@@ -60,7 +60,6 @@ function Show(){
             })
             
             setCopyData(filterdData)
-            // setApiData(filterdData)
         }
         else if(x == 'l'){
 
