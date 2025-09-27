@@ -66,14 +66,12 @@ function Show(){
             let filterdData = apiData.filter((a)=>{
                 return a.mealType[0] == "Lunch";
             })
-            // setApiData(filterdData)
             setCopyData(filterdData)
         }
         else if(x == 'd'){
             let filterdData = apiData.filter((a)=>{
                 return a.mealType[0] == "Dinner";
             })
-            // setApiData(filterdData)
             setCopyData(filterdData)
 
         }
