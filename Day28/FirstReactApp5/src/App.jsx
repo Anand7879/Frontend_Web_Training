@@ -49,13 +49,17 @@
 import React from 'react'
 
 const App = () => {
+
+    let input = {       
+        name : "",
+        passWord : ""
+    }
   return (
     <div>
-        <input type="text" placeholder='Name' />
+        <input name='name' value={input.name} type="text" placeholder='Name' />
         <br />
         <br />
-        <input type="text" placeholder='Password' />
-
+        <input name='passWord' value={input.passWord} type="text" placeholder='Password' />
     </div>
   )
 }
