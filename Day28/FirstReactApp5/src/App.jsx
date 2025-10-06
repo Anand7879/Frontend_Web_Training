@@ -13,17 +13,31 @@ const App = () => {
        setData([...data,input])
          console.log(data)
     }
+  function fun3(index){
+    let newData = data.filter((value,i)=>{
+        return i!==index
+    })
+    setData(newData)
+  } 
+
+
 
   return (
     <div>
         {/* <h2>{input}</h2> */}
+        <input onChange={fun1} />  
+        <button onClick={fun2}>Print</button>
         {
-            data.map((value)=>{
-                return <h2>{value}</h2>
+            data.map((value,index)=>{
+                
+                return (
+                    <div>
+                        <h2>{value}</h2>
+                        <button onClick={()=>fun3(index)}>Clear</button>
+                    </div>
+                )
             })
         }
-    <input onChange={fun1} />  
-        <button onClick={fun2}>Print</button>
     </div>
   )
 }
