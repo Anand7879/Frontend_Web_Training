@@ -47,23 +47,22 @@
 // export default App~
 
 import React from 'react'
-// import SignUp from './SignUp'
-// import Login from './Login'
-// import { Route, Routes } from 'react-router-dom'
-// import Home from './Home'
+import SignUp from './SignUp'
+import Login from './Login'
+import { Route, Routes } from 'react-router-dom'
+import Home from './Home'
 // http://localhost:5173/
 const App = () => {
   return (
     <div>
-      <SignUp/>
-      <Login/>
-      {/* <Routes>
+      {/* <SignUp/>
+      <Login/> */}
+
+      <Routes>
         <Route   path='/'    element={<Home/>}/>
         <Route   path='/signup'    element={<SignUp/>}/>
         <Route   path='/login'    element={<Login/>}/>
-
-
-      </Routes> */}
+      </Routes>
     </div>
   )
 }

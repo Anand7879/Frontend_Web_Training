@@ -1,5 +1,5 @@
-import React from 'react'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const Login = () => {
 
@@ -26,8 +26,7 @@ const Login = () => {
     }
   return (
     <div>
-        <fieldset>
-        <legend>Login Form</legend>
+        <legend>Login</legend>
         <h1>{show.name}</h1>
         <h1>{show.email}</h1>
         <h1>{show.passWord}</h1>
@@ -42,7 +41,9 @@ const Login = () => {
         <br />
         <br />
         <button onClick={fun2}>click</button>
-        </fieldset>
+        <Link  to={'/signup'} >  
+        <button style={{marginLeft:"10px"}}>go to the SignUp page</button>
+       </Link>
     </div>
     )
 }

@@ -1,5 +1,5 @@
-import React from 'react'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const SignUp = () => {
 
@@ -26,6 +26,7 @@ const SignUp = () => {
     }
   return (
     <div>
+        <legend>SignUp</legend>
         <h1>{show.name}</h1>
         <h1>{show.email}</h1>
         <h1>{show.passWord}</h1>
@@ -40,7 +41,10 @@ const SignUp = () => {
         <br />
         <br />
         <button onClick={fun2}>click</button>
-    </div>
+        <Link  to={'/login'}>  
+          <button style={{marginLeft:"10px"}}>Login</button>
+        </Link>
+   </div>
     )
 }
 
