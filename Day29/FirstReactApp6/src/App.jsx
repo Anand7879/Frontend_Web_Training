@@ -1,67 +1,47 @@
-// import React from 'react'
-// import { useState } from 'react'
-
-// const App = () => {
-
-//     let [input, setInput] = useState("")
-//     let [data,setData] = useState([])
-//     function fun1(e){
-//         // console.log(e.target.value)
-//         setInput(e.target.value)
-//     }
-//     function fun2(){
-//        setData([...data,input])
-//          console.log(data)
-//     }
-//   function fun3(index){
-//     let newData = data.filter((value,i)=>{
-//         return i!==index
-//     })
-//     setData(newData)
-//   } 
-
-
-
-//   return (
-//     <div>
-//         {/* <h2>{input}</h2> */}
-//         <input onChange={fun1} />  
-//         <button onClick={fun2}>Print</button>
-//         {
-//             data.map((value,index)=>{
-                
-//                 return (
-//                     <div>
-//                         <h2>{value}</h2>
-//                         <button onClick={()=>fun3(index)}>Clear</button>
-//                     </div>
-//                 )
-//             })
-//         }
-//     </div>
-//   )
-// }
-// export default App
-
-
-
-
 import React from 'react'
+import { useState } from 'react'
 
 const App = () => {
 
-    let input = {       
+    let[input,SetInput] = useState({       
         name : "",
+        email: "",
         passWord : ""
+    })
+
+     let[show,SetShow] = useState({       
+        name : "",
+        email: "",
+        passWord : ""
+    })
+
+    function fun1(e){
+        let{name,value} = e.target
+        SetInput({...input,[name]:value})
+        console.log(input)
+    }
+    function fun2(){
+        SetShow(input)
+        console.log(show)
     }
   return (
     <div>
-        <input name='name' value={input.name} type="text" placeholder='Name' />
+        <h1>{show.name}</h1>
+        <h1>{show.email}</h1>
+        <h1>{show.passWord}</h1>
+        <br />
+        <input name='name' value={input.name} onChange={fun1} type="text" placeholder='Name' />
         <br />
         <br />
-        <input name='passWord' value={input.passWord} type="text" placeholder='Password' />
+        <input type="email" name='email' value={input.email} onChange={fun1} placeholder='Email' />
+        <br />
+        <br />
+        <input name='passWord' value={input.passWord} type="text" onChange={fun1} placeholder='Password' />
+        <br />
+        <br />
+        <button onClick={fun2}>click</button>
     </div>
-  )
+    )
 }
 
 export default App

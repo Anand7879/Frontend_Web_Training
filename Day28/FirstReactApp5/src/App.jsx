@@ -43,25 +43,3 @@
 // }
 // export default App
 
-
-
-
-import React from 'react'
-
-const App = () => {
-
-    let input = {       
-        name : "",
-        passWord : ""
-    }
-  return (
-    <div>
-        <input name='name' value={input.name} type="text" placeholder='Name' />
-        <br />
-        <br />
-        <input name='passWord' value={input.passWord} type="text" placeholder='Password' />
-    </div>
-  )
-}
-
-export default App
