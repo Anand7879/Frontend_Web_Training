@@ -1,58 +1,54 @@
+// import React from 'react'
+// import { useReducer } from 'react'
+
+// const App = () => {
+//   function reducer(count,action){
+//     if(action.type==='inc'){
+//       return count+1
+//     }
+//     else{
+//       return count
+//     }
+//   }
+
+//   let[count,dispatch] = useReducer(reducer,0)
+//   return (
+//     <div>
+//        <h2>{count}</h2>
+//        <button onClick={()=>dispatch({type:"inc"})}>++</button>
+//     </div>
+//   )
+// }
+
+// export default App
+
 import React from 'react'
-import { useEffect, useState } from 'react'
+import { useReducer } from 'react'
 
 const App = () => {
-  const [allProducts, setAllProducts] = useState([])
-  const [searchResult, setSearchResult] = useState(null)
-  
-  useEffect(() => {
-    fetch("https://dummyjson.com/products").then((res) => {
-      return res.json();
-    }).then((data) => {
-      console.log(data);
-      setAllProducts(data.products)
-    })
-  }, [])
-  
-  function search() {
-    let input = document.querySelector("input").value;
-    
-    // Handle empty input
-    if (input === '') {
-      setSearchResult(null);
-      return;
+  function reducer(color,action){
+    if(action.type==='r'){
+      return 'red'
     }
-    
-    let foundProduct = allProducts.find((a) => {
-      return a.title.toLowerCase().includes(input.toLowerCase());
-    })
-    
-    setSearchResult(foundProduct ? foundProduct : 'not found');
-
+    else if(action.type==='g'){
+      return 'green'
+    }     
+    else if(action.type==='b'){
+      return 'blue'
+    }
+    else{
+      return color
+    } 
   }
-  
-  return (
-    <div>
-      <input type="text" />
-      <button onClick={search}>Search</button>
-    
-      <div>
-        {searchResult && searchResult !== 'not found' ? (
-          <section> 
-            <h2>{searchResult.title}</h2>
-            <p>{searchResult.description}</p>
-            <h3>Price: ${searchResult.price}</h3>
-            <p>Category: {searchResult.category}</p>
-            <p>Brand: {searchResult.brand}</p>
-            <p>Rating: {searchResult.rating}</p>
-            <p>Stock: {searchResult.stock}</p>
-            <img src={searchResult.thumbnail} alt="" />
-          </section>
-        ) : searchResult === 'not found' ? (
-          <p>Product not found</p>
-        ) : null}
 
-      </div>
+  let[color,dispatch] = useReducer(reducer,'white')
+
+  return (
+    <div style={{backgroundColor:color,height:'100vh'}}>
+      <button onClick={()=>dispatch({type:'r'})}>Red</button>
+      <button onClick={()=>dispatch({type:'g'})}>Green</button>
+      <button onClick={()=>dispatch({type:'b'})}>Blue</button>
+
     </div>
   )
 }
