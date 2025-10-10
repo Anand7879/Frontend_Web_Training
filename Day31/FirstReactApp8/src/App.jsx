@@ -22,33 +22,55 @@
 
 // export default App
 
+
+
+
+// import React from 'react'
+// import { useReducer } from 'react'
+
+// const App = () => {
+//   function reducer(color,action){
+//     if(action.type==='r'){
+//       return 'red'
+//     }
+//     else if(action.type==='g'){
+//       return 'green'
+//     }     
+//     else if(action.type==='b'){
+//       return 'blue'
+//     }
+//     else{
+//       return color
+//     } 
+//   }
+
+//   let[color,dispatch] = useReducer(reducer,'white')
+
+//   return (
+//     <div style={{backgroundColor:color,height:'100vh'}}>
+//       <button onClick={()=>dispatch({type:'r'})}>Red</button>
+//       <button onClick={()=>dispatch({type:'g'})}>Green</button>
+//       <button onClick={()=>dispatch({type:'b'})}>Blue</button>
+
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+
 import React from 'react'
-import { useReducer } from 'react'
+import Home from './Home'
 
 const App = () => {
-  function reducer(color,action){
-    if(action.type==='r'){
-      return 'red'
-    }
-    else if(action.type==='g'){
-      return 'green'
-    }     
-    else if(action.type==='b'){
-      return 'blue'
-    }
-    else{
-      return color
-    } 
-  }
-
-  let[color,dispatch] = useReducer(reducer,'white')
+  
+  let user="hello Anand"
 
   return (
-    <div style={{backgroundColor:color,height:'100vh'}}>
-      <button onClick={()=>dispatch({type:'r'})}>Red</button>
-      <button onClick={()=>dispatch({type:'g'})}>Green</button>
-      <button onClick={()=>dispatch({type:'b'})}>Blue</button>
-
+    <div>
+      <Home data={user}></Home>
     </div>
   )
 }
