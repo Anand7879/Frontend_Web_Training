@@ -1,55 +1,24 @@
 import React from 'react'
-
-const Cart = ({cart, setCart, itemsInCart, setItemsInCart}) => {
-    function del(item){
-        let x = cart.filter((a)=>{
-            return a.userId !== item.userId;
-        })
-        setCart(x);
-        let quantity = item.quantity;
-        setItemsInCart(itemsInCart-quantity);
-    }
-    function setQuantity(a,x){
-        if(x == -1){
-            if(a.quantity == 1){
-                del(a);
-                return;
-            }
-            else{
-                a.quantity--;
-            }
-            setItemsInCart(itemsInCart-1);
-        }
-        else{
-            a.quantity++;
-            setItemsInCart(itemsInCart+1);
-        }
-    }
+const Cart = ({cart, SetCart}) => {
   return (
-    <section className='all'>
-        {
-        cart.map((a, b)=>{
+    <div>
+        {cart.map((a,b)=>{
             return(
-                <>
-                <div id='card'>
+               <div id='one'>
                     <img src={a.image}/>
                     <p>{a.name}</p>
-                    <p>Rating: {a.rating}</p>
-                    <p>Quantity: {a.quantity}</p>
-                    <div className="btns">
-                        <button onClick={()=>setQuantity(a,-1)}>--</button>
-                        <button onClick={()=>del(a)}>Remove</button>
-                        <button onClick={()=>setQuantity(a,1)}>++</button>
-                        {/* <button onClick={()=>save(b)}>Save</button> */}
-                        {/* <button onClick={()=>setCart(a)}>Add To Cart</button> */}
-                    </div>
+                    <p id='p1'>{a.rating}</p>
+                    <button  onClick={()=>{
+                        let x = cart.filter((item, index)=>{
+                            return index != b;
+                        })
+                        SetCart(x);
+                    }}>Remove</button>
                 </div>
-                </>
             )
-        })
-    }
-    </section>
+        }       
+        )}
+    </div>
   )
 }
-
 export default Cart
