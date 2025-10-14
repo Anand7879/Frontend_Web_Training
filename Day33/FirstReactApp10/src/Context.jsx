@@ -3,7 +3,6 @@ import { createContext, use, useEffect } from "react";
 let context = createContext()
 export default context
 
-
 const contextP=({children})=>{
     let data = {
         apiData:[],
