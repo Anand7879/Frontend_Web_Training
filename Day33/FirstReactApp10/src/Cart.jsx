@@ -1,50 +1,26 @@
-// import React from 'react'
+import React from 'react'
+import { useContext } from 'react'
+import Context from './Context'
+const Cart = () => {
+    let {state,dispatch}=useContext(Context)
+  return (
+    <div>
+        <h1>Cart Items</h1>
+        <div>
+        {
+          state.cart.map((a)=>{
+            return(
+                <div id='one'>
+                    <img src={a.image}/>
+                    <p>{a.name}</p>
+                    <p id='p1'>⭐ {a.rating}</p>
+                </div>
+                )
+              })
+          }
+        </div>
+    </div>
+  )
+}
 
-// const cart = ({cart}) => {
-//   return (
-//     <div>
-//         {
-//             cart.map((a)=>{
-//                 return (<>
-//                 <div id='card'> 
-//                     <img  src={a.image}/>
-//             <p>{a.name}</p>
-//             <p> Rating: {a.rating}</p>
-//          <button  onClick={()=> SetCart([...cart,a])}>add </button>
-//          </div>
-//                 </>)
-
-//             })
-//         }
-//     </div>
-//   )
-// }
-
-// export default cart
-
-// import React from 'react'
-// import { Link } from 'react-router-dom'
-// const cart = ({cart}) => {
-//     return (
-//         <div>
-//             <h1>Cart Items</h1>
-//             {
-//                 cart.map((a) => {
-//                     return (<>
-//                         <div id='card'>
-//                             <img src={a.image} />
-//                             <p>{a.name}</p>
-//                             <p> Rating: {a.rating}</p>
-//                             <button onClick={() => SetCart([...cart, a])}>Add to Cart </button>
-//                         </div>
-//                     </>)    
-//                 })
-//             }
-//             <Link to={'/'}>
-//                 <button>Go to Home</button>
-//             </Link>
-//         </div>
-//     )
-// }
-
-// export default cart
+export default Cart

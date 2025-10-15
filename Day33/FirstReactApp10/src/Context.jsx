@@ -1,17 +1,21 @@
-import { createContext, use, useEffect } from "react";
+import { createContext, useEffect } from "react";
+import { useReducer } from "react";
 
-let context = createContext()
-export default context
+let Context = createContext()
+export default Context
 
-const contextP=({children})=>{
+const ContextP=({children})=>{
     let data = {
         apiData:[],
         cart:[]
     }
 
-    function reducer(apiData,action){
-        if(action.type==="apiData"){
-            return {...apiData,apiData:action.payload}
+    function reduser(state,action){
+        if(action.type=="apiData"){
+            return {apiData:action.payload}
+        }
+        else if(action.type=="addToCart"){
+            return {...state,cart:[action.payload]}
         }
     }
 
@@ -24,13 +28,13 @@ const contextP=({children})=>{
         })
     },[])
 
-    let [val,dispatch]=useReducer(reducer,data)
+    let [state,dispatch]=useReducer(reduser,data)
     return(
         <div>
-            <context.Provider>
+            <Context.Provider value={{state,dispatch}}>
                 {children}
-            </context.Provider>
+            </Context.Provider>
         </div>
     )
 }
-export {contextP}
+export {ContextP}
