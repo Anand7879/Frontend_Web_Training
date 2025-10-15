@@ -18,6 +18,7 @@ const ContextP=({children})=>{
             return {...state,cart:[action.payload]}
         }
     }
+    
 
     useEffect(()=>{
         fetch("https://dummyjson.com/recipes")
