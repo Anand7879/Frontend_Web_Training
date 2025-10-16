@@ -10,6 +10,7 @@ const ContextP=({children})=>{
         apiData:[],
         cart:[]
     }
+    
 
     function reduser(state,action){
         if(action.type=="apiData"){
