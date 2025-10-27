@@ -22,39 +22,36 @@ const ToDo = () => {
   };
 
   return (
-    <div style={{ padding: '20px', maxWidth: '600px', margin: '0 auto' }}>
+    <div>
       <h1>ToDo List</h1>
       
-      <div style={{ marginBottom: '20px' }}>
+      <div>
         <input
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyPress={(e) => e.key === 'Enter' && addTodo()}
           placeholder="Add a new task..."
-          style={{ padding: '10px', width: '70%', marginRight: '10px' }}
         />
-        <button onClick={addTodo} style={{ padding: '10px 20px' }}>
+        <button onClick={addTodo}>
           Add
         </button>
       </div>
 
-      <ul style={{ listStyle: 'none', padding: 0 }}>
+      <ul>
         {todos.map(todo => (
-          <li key={todo.id} style={{ marginBottom: '10px', display: 'flex', alignItems: 'center' }}>
+          <li key={todo.id}>
             <input
               type="checkbox"
               checked={todo.completed}
               onChange={() => toggleTodo(todo.id)}
               style={{ marginRight: '10px' }}
             />
-            <span style={{ 
-              textDecoration: todo.completed ? 'line-through' : 'none',
-              flex: 1
-            }}>
+            <span>
               {todo.text}
             </span>
-            <button onClick={() => deleteTodo(todo.id)} style={{ marginLeft: '10px' }}>
+
+            <button onClick={() => deleteTodo(todo.id)}>
               Delete
             </button>
           </li>
