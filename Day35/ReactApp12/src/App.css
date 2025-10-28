@@ -78,3 +78,36 @@ input{
  padding: 5px;
  border-radius: 100px;
 }
+
+
+#box {
+  width: 320px;
+  margin: 80px auto;
+  background: #111827;              /* dark neutral background */
+  color: #f9fafb;                   /* soft white text */
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  font-family: 'Inter', system-ui, sans-serif;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+#box h1 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #93c5fd;                   /* subtle blue accent */
+  letter-spacing: 0.5px;
+}
+
+#box h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 16px 0 28px;
+  font-variant-numeric: tabular-nums;
+}
+
+#box button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

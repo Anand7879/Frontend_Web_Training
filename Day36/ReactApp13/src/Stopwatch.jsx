@@ -43,15 +43,15 @@ const stop = () => {
         {seconds}.{Minisec.toString().padStart(2, "0")}
       </h2>
       
-      <button onClick={start} disabled={isRunning}>
+      <button id = "1" onClick={start} disabled={isRunning}>
         Start
       </button>
       
-      <button onClick={stop} disabled={!isRunning}>
+      <button id = "2" onClick={stop} disabled={!isRunning}>
         Stop
       </button>
       
-      <button onClick={reset}>
+      <button id = "3" onClick={reset}>
         Reset
       </button>
     </div>

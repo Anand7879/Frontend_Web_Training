@@ -5,7 +5,7 @@ import App from './App.jsx'
 import {BrowserRouter}  from 'react-router-dom'
 import { ContextP } from './Context.jsx'
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  // <StrictMode>
     <BrowserRouter>  
     <ContextP>  
   
@@ -13,5 +13,5 @@ createRoot(document.getElementById('root')).render(
     </ContextP>
    
     </BrowserRouter>
-  </StrictMode>,
+  // </StrictMode>,
 )
