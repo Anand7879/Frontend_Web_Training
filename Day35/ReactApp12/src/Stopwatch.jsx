@@ -10,10 +10,11 @@ const Stopwatch = () => {
     const timer = setInterval(() => {
       setSeconds(s => s + 1);
     }, 500);
+     window.stopwatchTimer = timer;
 }
 const stop = () => {
     setIsRunning(false);
-    clearInterval(timer);
+    clearInterval(window.stopwatchTimer);
   };
  const reset = () => {
     // stop();
