@@ -1,14 +1,17 @@
 import React, { useContext } from 'react'
 import Context from './Context'
 import './App.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 const Home = () => {
     
   let{state,dispatch}=useContext(Context)
 
- 
+ let navigate = useNavigate()
+ function newPage(){
+      navigate(`/detail/${id}`)
+ }
   return (
     <>
     <div>
@@ -20,7 +23,7 @@ const Home = () => {
         {
           state.apiData.map((a)=>{
             return(
-              <div id='one'>
+              <div id='one' onClick={newPage}>
                     <img src={a.image}/>
                     <p>{a.name}</p>
                     <p id='p1'>⭐ {a.rating}</p>
