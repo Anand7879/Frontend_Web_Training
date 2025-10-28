@@ -16,7 +16,7 @@ const stop = () => {
     clearInterval(timer);
   };
  const reset = () => {
-    // stop();
+    stop();
     setSeconds(0);
   };
 
