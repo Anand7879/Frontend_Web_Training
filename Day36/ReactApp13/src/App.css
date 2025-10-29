@@ -52,3 +52,9 @@ button:hover{
 button:disabled{
   cursor: not-allowed;
 }
+
+input{
+  height: 25px;
+ border-radius: 5px;
+ border: rgb(0, 200, 20);
+}

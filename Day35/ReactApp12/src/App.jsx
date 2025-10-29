@@ -4,7 +4,7 @@ import {Route,Routes} from 'react-router-dom'
 import Cart from './Cart'
 import ProductDetails from './ProductDetails'
 import ToDo from './ToDo'
-import Stopwatch from './stopwatch'
+
 
 const App = () => {
   // const [count, setCount] = useState(0)
@@ -20,13 +20,12 @@ const App = () => {
   return (
      <div>
 
-      <Stopwatch/>
        {/* <Home/> */}
-      {/* <Routes>
+      <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/detail/:id' element={<ProductDetails/>}/>
-      </Routes> */}
+      </Routes>
      </div>
 
     
