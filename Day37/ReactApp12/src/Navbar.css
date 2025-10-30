@@ -1,0 +1,113 @@
+/* Global Reset & Base Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background-color: #f7fbff;
+  color: #1e3a8a;
+  line-height: 1.6;
+}
+
+/* Navigation Bar */
+#Nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px;
+  background-color: #bae3fc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+#Nav a {
+  text-decoration: none;
+  color: #003366;
+  font-weight: 600;
+  font-size: 18px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+#Nav a:hover {
+  color: #007bff;
+  transform: translateY(-2px);
+}
+
+/* Form Container */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: 350px;
+  margin: 80px auto;
+  padding: 25px 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.form-container:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.form-container h2 {
+  color: #1d4ed8;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.form-container input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid #60a5fa;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-container input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.3);
+}
+
+/* Button */
+.form-container button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #2563eb;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form-container button:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  #Nav {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 0;
+  }
+
+  .form-container {
+    width: 90%;
+    padding: 20px;
+  }
+}
