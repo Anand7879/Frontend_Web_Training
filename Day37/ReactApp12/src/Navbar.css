@@ -111,3 +111,23 @@ body {
     padding: 20px;
   }
 }
+
+
+
+/* src/components/About.css */
+.about-section {
+  padding: 20px;
+  background-color: #220202;
+  border-radius: 8px;
+  margin: 20px;
+}
+
+.about-section h2 {
+  color: #fcf6f6;
+  margin-bottom: 15px;
+}
+
+.about-section p {
+  line-height: 1.6;
+  color: #f9f6f6;
+}

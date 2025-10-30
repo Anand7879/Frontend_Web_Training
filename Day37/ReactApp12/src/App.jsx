@@ -4,6 +4,7 @@ import {Route,Routes} from 'react-router-dom'
 import NavBar from './NavBar'
 import Login from './Login'
 import SignUp from './SignUp'
+import About from './About'
 
 
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
        
       <Routes>
         <Route path='/' element={<NavBar/>}/>
+         <Route path='/about' element={<About/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='signup' element={<SignUp/>}/>
       </Routes>
