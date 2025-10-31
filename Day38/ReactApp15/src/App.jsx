@@ -4,7 +4,14 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 const App = () => {
   return (
     <div>
+
       <nav class="navbar navbar-expand-lg navbar-light bg-light" >
+        <button type="button" class="btn btn-primary position-relative">
+  Profile
+  <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+    <span class="visually-hidden">New alerts</span>
+  </span>
+</button>
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,7 +65,7 @@ const App = () => {
       </div>
     </div>
     <div class="carousel-item">
-      <img src="https://images.unsplash.com/photo-1761759161257-a1f9c41df8a9?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1169" height = "300px" class="d-block w-100" alt="..."/>
+      <img src="https://images.unsplash.com/photo-1744261333664-1c80bce2cc58?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170" height = "300px" class="d-block w-100" alt="..."/>
       <div class="carousel-caption d-none d-md-block">
         <h5>Second slide label</h5>
         <p>Some representative placeholder content for the second slide.</p>
