@@ -40,7 +40,7 @@ function App() {
 
   return (
     <ReactMapGL
-      mapboxApiAccessToken={"<YOUR_API_KEY>"}
+      mapboxApiAccessToken={"pk.eyJ1IjoiYW5vbWljMzAiLCJhIjoiY2tydnFkcTgyMDk5bjJ1bzJhOGRwdHdyYSJ9"}
       {...viewport}
       onViewportChange={(viewport) => setViewport(viewport)}
     >

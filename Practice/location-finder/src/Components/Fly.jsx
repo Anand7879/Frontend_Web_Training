@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Axios from "axios";
 
-const API_KEY = "<YOUR_API_KEY>";
+const API_KEY = "pk.eyJ1IjoiYW5vbWljMzAiLCJhIjoiY2tydnFkcTgyMDk5bjJ1bzJhOGRwdHdyYSJ9";
 
 const Fly = ({ setLat, setLon }) => {
 
