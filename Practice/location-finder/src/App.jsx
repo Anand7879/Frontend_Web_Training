@@ -7,6 +7,7 @@ import "./App.css";
 
 function App() {
 
+  
   // Setting up the state for the latitude
   // and longitude
   const [lat, setLat] = useState(22.5726);
