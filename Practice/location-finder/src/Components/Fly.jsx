@@ -8,7 +8,6 @@ const Fly = ({ setLat, setLon }) => {
   // Setting up the state variable to store user input
   const [city, setCity] = useState("Kolkata");
 
-  
   // Function to call the API and set the
   // coordinates accordingly
   function getCoordinates() {
