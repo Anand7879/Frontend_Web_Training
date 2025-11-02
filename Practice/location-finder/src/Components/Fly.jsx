@@ -5,6 +5,7 @@ const API_KEY = "<YOUR_API_KEY>";
 
 const Fly = ({ setLat, setLon }) => {
 
+  
   // Setting up the state variable to store user input
   const [city, setCity] = useState("Kolkata");
 
