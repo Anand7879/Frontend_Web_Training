@@ -71,22 +71,82 @@
 
 
 //solution
-import React, { use, useEffect, useRef, useState } from 'react'
+// import React, { use, useEffect, useRef, useState } from 'react'
 
+// const App = () => {
+//   let [input,SetInput] = useState("")
+//   let count = useRef(0)
+
+//   useEffect(() => {
+//     count.current = count.current + 1
+//   })
+//   return (
+//     <div>
+//    <h1>{count.current}</h1>
+//       <input type="text" onChange={(e)=>SetInput(e.target.value)} />
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+// import React from 'react'
+// import { useState } from 'react'
+// const App = () => {
+//    let[data,SetData] = useState(0)
+
+//   return (
+//     <div>
+//         <h2>{data}</h2>
+//         <button onClick={()=>SetData(data+1)}>click</button>
+//         <Home/>
+//     </div>
+//   )
+// }
+
+// const Home = () => {
+//   console.log("hello");
+  
+//   return (
+//     <div>Home</div>
+//   )
+// }
+
+// export default App
+// export {Home}
+
+
+
+import React, { memo } from 'react'
+import { useState } from 'react'
 const App = () => {
-  let [input,SetInput] = useState("")
-  let count = useRef(0)
+   let[data,SetData] = useState(0)
 
-  useEffect(() => {
-    count.current = count.current + 1
-  })
   return (
     <div>
-   <h1>{count.current}</h1>
-      <input type="text" onChange={(e)=>SetInput(e.target.value)} />
+        <h2>{data}</h2>
+        <button onClick={()=>SetData(data+1)}>click</button>
+        <Home/>
     </div>
   )
 }
 
+const Home = memo(() => {
+  console.log("hello");
+  
+  return (
+    <div>Home</div>
+  )
+})
+
 export default App
+export {Home}
+
+
+
+
+
+
 
